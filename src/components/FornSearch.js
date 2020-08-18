@@ -3,13 +3,14 @@ import Sing from "../assets/img/sing.svg";
 import Lyrics from "../assets/img/lyrics.svg";
 import Error from "./Error";
 
-const FormSearch = () => {
+const FormSearch = ({setSearchAPI}) => {
+
   const [search, setSearch] = useState({
     artist: "",
     lyrics: "",
   });
 
-  const [alertError, setAlertError] = useState(true);
+  const [alertError, setAlertError] = useState(false);
 
   const { artist, lyrics } = search;
   const handleSearch = (e) => {
@@ -23,8 +24,11 @@ const FormSearch = () => {
     e.preventDefault();
 
     if (artist.trim() === "" && lyrics.trim() === "") {
+      setAlertError(true);
       return;
-    }
+    } 
+    setAlertError(false);
+    setSearchAPI(search);
   };
 
   return (

@@ -16,7 +16,7 @@ const Error = () => {
       <div className="-mx-3 py-2 px-4">
         <div className="mx-3">
           <span className="text-red-500 font-semibold">Error</span>
-          <p className="text-gray-600 text-sm">Your email is already used!</p>
+          <p className="text-gray-600 text-sm">Please fill all the inputs </p>
         </div>
       </div>
     </div>
